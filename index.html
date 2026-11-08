@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Drum Warm-Up · 三種打點練習</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Warm-Up" />
+  <meta name="theme-color" content="#0b0d10" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ===== Top bar ===== -->
+    <header class="topbar">
+      <div class="parts" id="partTabs"></div>
+      <button id="fsBtn" class="icon-btn" title="全螢幕" aria-label="全螢幕">⤢</button>
+    </header>
+
+    <!-- ===== Exercise stage ===== -->
+    <main class="stage">
+      <div class="part-head">
+        <div class="part-title">
+          <span class="num" id="partNum">01</span>
+          <div class="titles">
+            <h1 id="partEn">Singles Switch</h1>
+            <span id="partZh" class="zh">手順類</span>
+          </div>
+        </div>
+        <p class="hint" id="partHint"></p>
+      </div>
+
+      <div class="pager" id="pager"></div>
+      <section class="exercise" id="exercise"><!-- lines injected here --></section>
+    </main>
+
+    <!-- ===== Transport ===== -->
+    <footer class="transport">
+      <div class="counter">
+        <div class="beatdots" id="beatDots"></div>
+        <div class="rep" id="repReadout">—</div>
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn" class="ctl" title="上一段">⟨</button>
+        <button id="playBtn" class="ctl play" title="播放 / 暫停">▶</button>
+        <button id="stopBtn" class="ctl" title="停止">■</button>
+        <button id="nextBtn" class="ctl" title="下一段">⟩</button>
+        <button id="nextUnitBtn" class="ctl unit" title="下一個 (N)">下一個</button>
+      </div>
+
+      <div class="settings">
+        <div class="modes" id="modeSwitch">
+          <button class="mode" data-m="loop" title="重複同一個，按「下一個」才換">循環</button>
+          <button class="mode" data-m="reps" title="每個打三次，自動換下一個">每個 ×3</button>
+        </div>
+        <div class="tempo">
+          <button class="bpm-step" id="bpmDown" aria-label="減速">–</button>
+          <div class="bpm-readout"><b id="bpmVal">85</b><small>BPM</small></div>
+          <button class="bpm-step" id="bpmUp" aria-label="加速">+</button>
+        </div>
+        <div class="presets" id="tempoPresets"></div>
+        <div class="toggles">
+          <div class="tg sub"><span>點擊</span>
+            <div class="subsel" id="subSel">
+              <button data-s="1" class="active" title="4/4 四個拍：重音 + 3 拍">4分</button>
+              <button data-s="2" title="四拍再加中間的 8 分">8分</button>
+              <button data-s="4" title="四拍再加每個 16 分">16分</button>
+            </div>
+          </div>
+          <label class="tg"><input type="checkbox" id="autoNext" checked /> <span>自動下一段</span></label>
+          <label class="tg"><input type="checkbox" id="countIn" checked /> <span>預備拍</span></label>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div id="startOverlay" class="overlay">
+    <div class="overlay-card">
+      <h2>Drum Warm-Up</h2>
+      <p class="zh">三種打點練習 · 跟著打點，熱身完成</p>
+      <button id="startBtn" class="start">開始練習</button>
+      <p class="tiny">點一下以啟用聲音 · 建議橫向使用 iPad</p>
+    </div>
+  </div>
+
+  <script src="exercises.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Drum Warm-Up · 三種打點練習",
+  "short_name": "Warm-Up",
+  "description": "Metronome-driven drum warm-up routine (hand order, phrasing, coordination).",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#0b0d10",
+  "theme_color": "#0b0d10",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
